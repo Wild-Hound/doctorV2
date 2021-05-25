@@ -12,7 +12,7 @@ function MainNavBar() {
     <div className={styles.NavWrapper}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
         <Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
-        <Navbar.Toggle aria-controls="navbarScroll" />
+
         <Navbar.Collapse id="navbarScroll">
           <Nav
             className="mr-auto my-2 my-lg-0"
@@ -28,6 +28,7 @@ function MainNavBar() {
           <span className={styles.miscUserIconGap}></span>
           Login
         </Button>
+        <Navbar.Toggle aria-controls="navbarScroll" />
       </Navbar>
     </div>
   );
