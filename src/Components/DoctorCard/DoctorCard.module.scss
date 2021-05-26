@@ -1,0 +1,63 @@
+.cardWrapper {
+  max-width: fit-content;
+  border: 1px solid rgba($color: #000000, $alpha: 0.125);
+  border-radius: 5px;
+  .topSection {
+    > img {
+      max-width: 275px;
+      max-height: 500px;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+  .bottomSection {
+    padding: 1.5em;
+    text-align: start;
+    > p {
+      margin: 0;
+    }
+    .name {
+      font-size: 1.25em;
+      font-weight: 500;
+    }
+    .speciality {
+      color: #8492a6;
+    }
+    .rating {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.5em 0;
+      > div {
+        > img {
+          max-width: 15px;
+          margin: 0 3px;
+        }
+      }
+      > span {
+        color: #8492a6;
+      }
+    }
+    .meta {
+      > div {
+        .icon {
+          color: #22a6b3;
+          margin-right: 10px;
+        }
+      }
+    }
+    .actBtn {
+      color: #1dd1a1;
+      background-color: transparent;
+      border: 2px solid #1dd1a1;
+      border-radius: 5px;
+      padding: 0.5em 1em;
+      display: block;
+      margin: 20px auto 0;
+      transition: all 0.35s;
+      &:hover {
+        background-color: #1dd1a1;
+        color: white;
+      }
+    }
+  }
+}

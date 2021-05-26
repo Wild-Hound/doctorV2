@@ -1,4 +1,5 @@
 import React from "react";
+import DoctorCard from "../../../Components/DoctorCard/DoctorCard";
 //@ts-ignore
 import styles from "./Doctors.module.scss";
 
@@ -13,7 +14,13 @@ function Doctors() {
           assistance, emergency treatment or a simple consultation.
         </p>
       </div>
-      <div className={styles.cardWrapper}></div>
+      <div className={styles.cardWrapper}>
+        <DoctorCard />
+        <DoctorCard />
+        <DoctorCard />
+        <DoctorCard />
+        <DoctorCard />
+      </div>
     </div>
   );
 }
