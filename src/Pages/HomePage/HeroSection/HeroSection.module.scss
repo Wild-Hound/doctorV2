@@ -1,11 +1,16 @@
+@import "../../../Styles/Mixins/BreakPoints.scss";
 .heroWrapper {
   display: flex;
   justify-content: center;
   align-items: center;
+  padding: 1em;
   background-image: url("../../../Images/hero_bg.jpg");
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  @include media("<tablet") {
+    flex-direction: column-reverse;
+  }
   .div1 {
     > h1 {
       margin-bottom: 0.75em;
@@ -33,5 +38,20 @@
       max-height: 75vh;
       padding-top: 5em;
     }
+  }
+}
+
+.company {
+  display: flex;
+  justify-content: center;
+  gap: 5em;
+  padding: 3em;
+  flex-wrap: wrap;
+  background-color: #f8f9fc;
+  @include media("<500px") {
+    gap: 2em;
+  }
+  > img {
+    max-width: 100px;
   }
 }

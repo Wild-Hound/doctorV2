@@ -6,28 +6,35 @@ import Nav from "react-bootstrap/Nav";
 import Button from "react-bootstrap/Button";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
+// @ts-ignore
+import docImg from "../../Images/doctor.png";
 
 function MainNavBar() {
   return (
     <div className={styles.NavWrapper}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="/">Navbar scroll</Navbar.Brand>
+        <Navbar.Brand href="/">
+          <div className={styles.logoWrapper}>
+            <img src={docImg} className={styles.logoImg} />
+            Doctor's Hub
+          </div>
+        </Navbar.Brand>
 
         <Navbar.Collapse id="navbarScroll">
           <Nav
-            className="mr-auto my-2 my-lg-0"
+            className="w-100 my-2 my-lg-0"
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
             <Nav.Link href="#action1">Home</Nav.Link>
             <Nav.Link href="#action2">Link</Nav.Link>
+            <Button variant="outline-info" className="ml-auto">
+              <FontAwesomeIcon icon={faUser} />
+              <span className={styles.miscUserIconGap}></span>
+              Login
+            </Button>
           </Nav>
         </Navbar.Collapse>
-        <Button variant="outline-info">
-          <FontAwesomeIcon icon={faUser} />
-          <span className={styles.miscUserIconGap}></span>
-          Login
-        </Button>
         <Navbar.Toggle aria-controls="navbarScroll" />
       </Navbar>
     </div>

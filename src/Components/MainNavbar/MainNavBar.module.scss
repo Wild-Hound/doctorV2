@@ -6,3 +6,11 @@
   width: 10px;
   display: inline-block;
 }
+.logoWrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  .logoImg {
+    max-width: 35px;
+  }
+}
