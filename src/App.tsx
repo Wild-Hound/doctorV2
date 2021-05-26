@@ -13,7 +13,7 @@ function App() {
           <Route exact path="/">
             <HomePage />
           </Route>
-          <Route>
+          <Route path="/*">
             <NotFound />
           </Route>
         </Switch>

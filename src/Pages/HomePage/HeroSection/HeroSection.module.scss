@@ -1,0 +1,37 @@
+.heroWrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-image: url("../../../Images/hero_bg.jpg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  .div1 {
+    > h1 {
+      margin-bottom: 0.75em;
+    }
+    > p {
+      max-width: 70ch;
+      color: #8492a6;
+    }
+    > a {
+      display: inline-block;
+      color: #1dd1a1;
+      border: 2px solid #1dd1a1;
+      padding: 0.5em 1em;
+      border-radius: 5px;
+      transition: all 0.35s;
+      &:hover {
+        background-color: #1dd1a1;
+        color: white;
+        text-decoration: none;
+      }
+    }
+  }
+  .div2 {
+    > img {
+      max-height: 75vh;
+      padding-top: 5em;
+    }
+  }
+}
