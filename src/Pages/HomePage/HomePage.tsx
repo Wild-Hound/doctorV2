@@ -1,5 +1,6 @@
 import React from "react";
 import HeroSection from "./HeroSection/HeroSection";
+import Mission from "./MissionSection/Mission";
 import ShortAbout from "./ShortAboutSection/ShortAbout";
 
 function HomePage() {
@@ -7,6 +8,7 @@ function HomePage() {
     <div>
       <HeroSection />
       <ShortAbout />
+      <Mission />
     </div>
   );
 }

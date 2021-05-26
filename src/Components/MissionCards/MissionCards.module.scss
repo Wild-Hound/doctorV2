@@ -1,0 +1,35 @@
+.missionCardWrapper {
+  background-color: white;
+  max-width: fit-content;
+  box-sizing: border-box;
+  padding: 1.5em 2em;
+  border-radius: 10px;
+  display: flex;
+  gap: 20px;
+  transition: all 0.5s;
+  &:hover {
+    background-color: #22a6b3;
+    .icon {
+      color: white;
+    }
+    .cardContent {
+      > p {
+        color: white;
+      }
+      > h5 {
+        color: white;
+      }
+    }
+  }
+  .icon {
+    color: #22a6b3;
+    font-size: 2em;
+  }
+  .cardContent {
+    > p {
+      color: #8492a6;
+      max-width: 45ch;
+      margin: 0;
+    }
+  }
+}
