@@ -1,0 +1,23 @@
+.doctorWrapper {
+  text-align: center;
+  padding: 5em 1em;
+  .introWrapper {
+    .badge {
+      color: #22a6b3;
+      background-color: #c7ecee;
+      padding: 0.35em 0.75em;
+      border: none;
+      border-radius: 10px;
+      font-size: 0.75em;
+      font-weight: bold;
+    }
+    > h3 {
+      margin: 1em 0;
+    }
+    > p {
+      color: #8492a6;
+      max-width: 75ch;
+      margin: auto;
+    }
+  }
+}
