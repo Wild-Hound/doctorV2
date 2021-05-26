@@ -7,12 +7,16 @@ import docImg from "../../Images/05.jpg";
 import star from "../../Images/star.png";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faClock, faMoneyCheckAlt } from "@fortawesome/free-solid-svg-icons";
+import { faHeart } from "@fortawesome/free-regular-svg-icons";
 
 function DoctorCard() {
   return (
     <div className={styles.cardWrapper}>
       <div className={styles.topSection}>
         <img src={docImg} />
+        <div className={styles.fav}>
+          <FontAwesomeIcon icon={faHeart} />
+        </div>
       </div>
       <div className={styles.bottomSection}>
         <p className={styles.name}>Jessica McFarlane</p>
