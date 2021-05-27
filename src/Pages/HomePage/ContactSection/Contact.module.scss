@@ -1,0 +1,23 @@
+.contactWrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  gap: 1em;
+  padding: 3em 1em;
+  > p {
+    max-width: 75ch;
+    color: #8492a6;
+  }
+  .conBtn {
+    background-color: #22a6b3;
+    color: white;
+    padding: 0.5em 1em;
+    border-radius: 5px;
+    cursor: pointer;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

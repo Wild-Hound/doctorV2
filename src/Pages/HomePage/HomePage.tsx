@@ -1,6 +1,7 @@
 import { Accordion } from "@material-ui/core";
 import React from "react";
 import Accordation from "./AccordationSection/Accordation";
+import Contact from "./ContactSection/Contact";
 import Doctors from "./DoctorsSection/Doctors";
 import HeroSection from "./HeroSection/HeroSection";
 import Mission from "./MissionSection/Mission";
@@ -14,6 +15,7 @@ function HomePage() {
       <Mission />
       <Doctors />
       <Accordation />
+      <Contact />
     </div>
   );
 }

@@ -1,0 +1,50 @@
+@import "../../Styles/Mixins/BreakPoints.scss";
+.footerWrapper {
+  background-color: #343a40;
+  color: white;
+  padding: 2em 1em;
+  .content {
+    max-width: 1100px;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    @include media("<tablet") {
+      flex-direction: column;
+    }
+    > div {
+      > p {
+        max-width: 55ch;
+        color: rgb(173, 181, 189);
+      }
+    }
+    .reachUs {
+      > ul {
+        > li {
+          color: rgb(173, 181, 189);
+          max-width: 25ch;
+        }
+      }
+      .socialIcons {
+        display: flex;
+        gap: 1em;
+        > a {
+          height: 35px;
+          width: 35px;
+          font-size: 1.5em;
+          background-color: #687980;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          border-radius: 35px;
+          color: white;
+        }
+      }
+    }
+  }
+  .copyRight {
+    padding-top: 1em;
+    text-align: center;
+    font-size: 1.5em;
+    color: white;
+  }
+}
