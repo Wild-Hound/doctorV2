@@ -1,0 +1,13 @@
+.loginWrapper {
+  display: flex;
+  height: 70vh;
+  > div {
+    flex-grow: 1;
+  }
+  .imgWrapper {
+    background-image: url("../../Images/logInBg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+  }
+}

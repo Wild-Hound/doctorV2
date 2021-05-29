@@ -1,13 +1,21 @@
 @import "../../Styles/Mixins/BreakPoints.scss";
 .footerWrapper {
   background-color: #343a40;
-  color: white;
   padding: 2em 1em;
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: white;
+  }
   .content {
     max-width: 1100px;
     margin: auto;
     display: flex;
     justify-content: space-between;
+
     @include media("<tablet") {
       flex-direction: column;
     }

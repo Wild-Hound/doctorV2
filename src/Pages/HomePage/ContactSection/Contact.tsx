@@ -10,7 +10,7 @@ function Contact() {
         Great doctor if you need your family member to get effective immediate
         assistance, emergency treatment or a simple consultation.
       </p>
-      <a className={styles.conBtn} href="#">
+      <a className={styles.conBtn} href="/contact">
         Contact us
       </a>
     </div>
