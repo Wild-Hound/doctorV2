@@ -10,4 +10,101 @@
     background-position: center;
     background-repeat: no-repeat;
   }
+  .logForm {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #d8e3e7;
+    .formWrapper {
+      display: flex;
+      flex-direction: column;
+      gap: 1em;
+      width: 350px;
+      background-color: white;
+      padding: 2em;
+      border-radius: 5px;
+      .inStyles {
+        outline: none;
+        border: 1px solid #8888;
+        padding: 0.5em 1em;
+        font-size: 1.15em;
+      }
+      > div {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        .rememberMe {
+          display: flex;
+          gap: 5px;
+          margin: 0;
+          align-items: center;
+          cursor: pointer;
+        }
+        .loginBtn {
+          background-color: #c7ecee;
+          color: #22a6b3;
+          border: 1px solid #c7ecee;
+          font-size: 1.15em;
+          padding: 5px 15px;
+          border-radius: 5px;
+          transition: all 0.35s;
+          &:hover {
+            background-color: #22a6b3;
+            color: #c7ecee;
+          }
+        }
+      }
+      .orDivider {
+        display: flex;
+        align-items: center;
+        gap: 5px;
+        font-size: 1.5em;
+        color: #aaa;
+        &::after,
+        &::before {
+          content: "";
+          width: 100%;
+          height: 2px;
+          background-color: #ddd;
+          border-radius: 5px;
+          margin-top: 5px;
+        }
+      }
+      .providerHolder {
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+        gap: 1em;
+        .providerBtn {
+          border: none;
+          outline: none;
+          padding: 0.5em;
+          border-radius: 5px;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          gap: 5px;
+          font-size: 1.15em;
+          background-color: #eeeeee;
+        }
+        #google {
+          color: #f21170;
+          transition: all 0.5s;
+          &:hover {
+            background-color: #f21170;
+            color: white;
+          }
+        }
+        #github {
+          color: #00adb5;
+          transition: all 0.5s;
+          &:hover {
+            background-color: #00adb5;
+            color: white;
+          }
+        }
+      }
+    }
+  }
 }
