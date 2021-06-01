@@ -2,8 +2,83 @@ import React from "react";
 import styles from "./Login.module.scss";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
+import env from "react-dotenv";
+import firebase from "firebase/app";
+import "firebase/auth";
+
+// firebase configuration
+const firebaseConfig = {
+  apiKey: `${process.env.REACT_APP_API_KEY}`,
+  authDomain: `${process.env.REACT_APP_PROJECT_ID}.firebaseapp.com`,
+  projectId: `${process.env.REACT_APP_PROJECT_ID}`,
+  storageBucket: `${process.env.REACT_APP_PROJECT_ID}.appspot.com`,
+  messagingSenderId: `${process.env.REACT_APP_SENDER_ID}`,
+  appId: `${process.env.REACT_APP_APP_ID}`,
+  measurementId: `${process.env.REACT_APP_MES_ID}`,
+};
+// handling an error
+!firebase.apps.length ? firebase.initializeApp(firebaseConfig) : firebase.app();
+
+// initiating the providers
+let googleProvider = new firebase.auth.GoogleAuthProvider();
+let gitProvider = new firebase.auth.GithubAuthProvider();
 
 function LogIn() {
+  const googleSignIn = () => {
+    firebase
+      .auth()
+      .signInWithPopup(googleProvider)
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a Google Access Token. You can use it to access the Google API.
+        // @ts-ignore
+        var token = credential.accessToken;
+        // The signed-in user info.
+        var user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+  };
+
+  const githubSignIn = () => {
+    firebase
+      .auth()
+      .signInWithPopup(gitProvider)
+      .then((result) => {
+        /** @type {firebase.auth.OAuthCredential} */
+        var credential = result.credential;
+
+        // This gives you a GitHub Access Token. You can use it to access the GitHub API.
+        // @ts-ignore
+        var token = credential.accessToken;
+
+        // The signed-in user info.
+        var user = result.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        // Handle Errors here.
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        // The email of the user's account used.
+        var email = error.email;
+        // The firebase.auth.AuthCredential type that was used.
+        var credential = error.credential;
+        // ...
+      });
+  };
+
   return (
     <div className={styles.loginWrapper}>
       <div className={styles.imgWrapper}></div>
@@ -33,11 +108,19 @@ function LogIn() {
           </div>
           <span className={styles.orDivider}>or</span>
           <div className={styles.providerHolder}>
-            <button className={styles.providerBtn} id={styles.google}>
+            <button
+              className={styles.providerBtn}
+              id={styles.google}
+              onClick={googleSignIn}
+            >
               <FontAwesomeIcon icon={faGoogle} />
               Log In With Google
             </button>
-            <button className={styles.providerBtn} id={styles.github}>
+            <button
+              className={styles.providerBtn}
+              id={styles.github}
+              onClick={githubSignIn}
+            >
               <FontAwesomeIcon icon={faGithub} />
               Log In With Github
             </button>

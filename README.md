@@ -11,4 +11,6 @@ installed packages
 <li>Ant Design</li>
 <li>Bootstrap</li>
 <li>Marelial UI</li>
+<li>FireBase</li>
+<li>dotEnv</li>
 </ol>
