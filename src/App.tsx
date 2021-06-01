@@ -7,6 +7,7 @@ import Footer from "./Components/Footer/Footer";
 import ContactUs from "./Pages/ContactUsPage/ContactUs";
 import LogIn from "./Pages/LoginPage/Login";
 import Appointment from "./Pages/AppointmentPage/Appointment";
+import UserDashborad from "./Pages/UserDashborad/UserDashborad";
 
 function App() {
   return (
@@ -25,6 +26,9 @@ function App() {
           </Route>
           <Route exact path="/appointment">
             <Appointment />
+          </Route>
+          <Route path="/dashborad/:id">
+            <UserDashborad />
           </Route>
           <Route path="/*">
             <NotFound />

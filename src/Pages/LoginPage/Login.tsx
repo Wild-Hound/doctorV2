@@ -5,6 +5,10 @@ import { faGoogle, faGithub } from "@fortawesome/free-brands-svg-icons";
 import env from "react-dotenv";
 import firebase from "firebase/app";
 import "firebase/auth";
+import { Tabs } from "antd";
+import "antd/dist/antd.css";
+
+const { TabPane } = Tabs;
 
 // firebase configuration
 const firebaseConfig = {
@@ -79,53 +83,90 @@ function LogIn() {
       });
   };
 
+  const passwordLogIn = (e: React.MouseEvent<HTMLInputElement>) => {
+    e.preventDefault();
+    // @ts-ignore
+    const email = document.getElementById("email").value;
+    // @ts-ignore
+    const pass = document.getElementById("password").value;
+
+    firebase
+      .auth()
+      // @ts-ignore
+      .signInWithEmailAndPassword(email, pass)
+      .then((userCredential) => {
+        // Signed in
+        var user = userCredential.user;
+        console.log(user);
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        console.log(errorMessage);
+      });
+  };
+
   return (
     <div className={styles.loginWrapper}>
       <div className={styles.imgWrapper}></div>
       <div className={styles.logForm}>
-        <form className={styles.formWrapper}>
-          <h3>Log In</h3>
-          <input
-            type="email"
-            placeholder="Email"
-            id="email"
-            required
-            className={styles.inStyles}
-          />
-          <input
-            type="password"
-            placeholder="Password"
-            id="password"
-            required
-            className={styles.inStyles}
-          />
-          <div>
-            <label className={styles.rememberMe}>
-              <input type="checkbox" id="remember" />
-              Remember Me
-            </label>
-            <input type="submit" value="Log In" className={styles.loginBtn} />
-          </div>
-          <span className={styles.orDivider}>or</span>
-          <div className={styles.providerHolder}>
-            <button
-              className={styles.providerBtn}
-              id={styles.google}
-              onClick={googleSignIn}
-            >
-              <FontAwesomeIcon icon={faGoogle} />
-              Log In With Google
-            </button>
-            <button
-              className={styles.providerBtn}
-              id={styles.github}
-              onClick={githubSignIn}
-            >
-              <FontAwesomeIcon icon={faGithub} />
-              Log In With Github
-            </button>
-          </div>
-        </form>
+        <Tabs defaultActiveKey="1">
+          <TabPane tab="Log In" key="1">
+            <form className={styles.formWrapper}>
+              <h3>Log In</h3>
+              <input
+                type="email"
+                placeholder="Email"
+                id="email"
+                required
+                className={styles.inStyles}
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                id="password"
+                required
+                className={styles.inStyles}
+              />
+              <div>
+                <label className={styles.rememberMe}>
+                  <input type="checkbox" id="remember" />
+                  Remember Me
+                </label>
+                <input
+                  type="submit"
+                  value="Log In"
+                  className={styles.loginBtn}
+                  onClick={(event) => {
+                    passwordLogIn(event);
+                  }}
+                />
+              </div>
+              <span className={styles.orDivider}>or</span>
+              <div className={styles.providerHolder}>
+                <button
+                  className={styles.providerBtn}
+                  id={styles.google}
+                  onClick={googleSignIn}
+                >
+                  <FontAwesomeIcon icon={faGoogle} />
+                  Log In With Google
+                </button>
+                <button
+                  className={styles.providerBtn}
+                  id={styles.github}
+                  onClick={githubSignIn}
+                >
+                  <FontAwesomeIcon icon={faGithub} />
+                  Log In With Github
+                </button>
+              </div>
+            </form>
+          </TabPane>
+          <TabPane tab="Create New Account" key="2">
+            Content of Tab Pane 2
+          </TabPane>
+        </Tabs>
       </div>
     </div>
   );

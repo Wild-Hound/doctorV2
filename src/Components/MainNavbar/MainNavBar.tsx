@@ -9,8 +9,15 @@ import { faUser } from "@fortawesome/free-solid-svg-icons";
 // @ts-ignore
 import docImg from "../../Images/doctor.png";
 import { Link } from "react-router-dom";
+import { useHistory } from "react-router-dom";
 
 function MainNavBar() {
+  const history = useHistory();
+
+  const loginBtnAct = () => {
+    history.push("/dashborad/accountinfo");
+  };
+
   return (
     <div className={styles.NavWrapper}>
       <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
@@ -37,7 +44,11 @@ function MainNavBar() {
                 Log In
               </Link>
             </Nav.Link>
-            <Button variant="outline-info" className="ml-auto">
+            <Button
+              variant="outline-info"
+              className="ml-auto"
+              onClick={loginBtnAct}
+            >
               <FontAwesomeIcon icon={faUser} />
               <span className={styles.miscUserIconGap}></span>
               Login
