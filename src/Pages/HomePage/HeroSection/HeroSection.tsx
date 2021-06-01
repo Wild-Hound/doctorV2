@@ -26,7 +26,7 @@ function HeroSection() {
             Great doctor if you need your family member to get immediate
             assistance, emergency treatment or a simple consultation.
           </p>
-          <a href="#">Book An Appointment</a>
+          <a href="/appointment">Book An Appointment</a>
         </div>
         <div className={styles.div2}>
           <img src={Img} />

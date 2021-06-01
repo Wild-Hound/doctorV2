@@ -6,6 +6,7 @@ import HomePage from "./Pages/HomePage/HomePage";
 import Footer from "./Components/Footer/Footer";
 import ContactUs from "./Pages/ContactUsPage/ContactUs";
 import LogIn from "./Pages/LoginPage/Login";
+import Appointment from "./Pages/AppointmentPage/Appointment";
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           </Route>
           <Route exact path="/login">
             <LogIn />
+          </Route>
+          <Route exact path="/appointment">
+            <Appointment />
           </Route>
           <Route path="/*">
             <NotFound />
