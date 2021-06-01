@@ -1,3 +1,4 @@
+@import "../../Styles/Mixins/BreakPoints.scss";
 .loginWrapper {
   display: flex;
   height: 70vh;
@@ -9,6 +10,9 @@
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    @include media("<tablet") {
+      display: none;
+    }
   }
   .logForm {
     position: relative;
@@ -16,11 +20,20 @@
     justify-content: center;
     align-items: center;
     background-color: #d8e3e7;
+    @include media("<tablet") {
+      background-image: url("../../Images/logInBg.jpg");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+    }
     .formWrapper {
       display: flex;
       flex-direction: column;
       gap: 1em;
       width: 350px;
+      @include media("<365px") {
+        width: 95vw;
+      }
       background-color: white;
       padding: 2em;
       border-radius: 5px;

@@ -8,6 +8,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faUser } from "@fortawesome/free-solid-svg-icons";
 // @ts-ignore
 import docImg from "../../Images/doctor.png";
+import { Link } from "react-router-dom";
 
 function MainNavBar() {
   return (
@@ -26,8 +27,16 @@ function MainNavBar() {
             style={{ maxHeight: "100px" }}
             navbarScroll
           >
-            <Nav.Link href="/">Home</Nav.Link>
-            <Nav.Link href="/login">Log In</Nav.Link>
+            <Nav.Link href="/">
+              <Link to="/" className={styles.navLinks}>
+                Home
+              </Link>
+            </Nav.Link>
+            <Nav.Link>
+              <Link to="/login" className={styles.navLinks}>
+                Log In
+              </Link>
+            </Nav.Link>
             <Button variant="outline-info" className="ml-auto">
               <FontAwesomeIcon icon={faUser} />
               <span className={styles.miscUserIconGap}></span>
