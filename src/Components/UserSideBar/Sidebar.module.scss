@@ -1,46 +1,93 @@
 .sideBarWrapper {
-  background-color: wheat;
+  background-color: #33d9b2;
   height: 100vh;
   width: 15vw;
   max-width: 350px;
-  min-width: 200px;
+  min-width: fit-content;
   display: flex;
   flex-direction: column;
   padding: 2.5em 0;
   gap: 1em;
   position: relative;
-  .backBtn {
-    font-size: 2em;
-    position: absolute;
-    right: 20px;
-    width: 40px;
-    height: 40px;
-    border: 1px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-radius: 5px;
+}
+
+.backBtn {
+  font-size: 2em;
+  position: absolute;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border: 1px solid black;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: all 0.35s;
+  &:hover {
+    background-color: white;
+  }
+}
+.menuWrapper {
+  margin-top: 3.5em;
+  padding: 0 1em;
+  .dashboradMenu {
+    text-align: center;
+    padding: 0.75em 0;
+    font-size: 1.25em;
+    transition: all 0.5s;
     cursor: pointer;
-    transition: all 0.35s;
+    color: black;
     &:hover {
       background-color: white;
     }
+    .icon {
+      margin-right: 0.25em;
+      font-size: 1.5em;
+    }
   }
-  .menuWrapper {
-    margin-top: 3.5em;
+}
+
+.collapsedMenu {
+  display: none;
+}
+
+.collapsed {
+  background-color: #33d9b2;
+  height: 100vh;
+  min-width: 75px;
+  display: flex;
+  flex-direction: column;
+  padding: 2.5em 0;
+  gap: 1em;
+  position: relative;
+  align-items: center;
+  > .menuWrapper {
+    display: none;
+  }
+  > .backBtn {
+    position: relative;
+    right: 0;
+  }
+  > .collapsedMenu {
+    display: block;
+    display: flex;
+    flex-direction: column;
+    gap: 1em;
     .dashboradMenu {
-      text-align: center;
-      padding: 0.75em 0;
-      font-size: 1.25em;
-      transition: all 0.5s;
+      font-size: 1.5em;
+      width: 40px;
+      height: 40px;
+      border: 1px solid black;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border-radius: 5px;
       cursor: pointer;
+      transition: all 0.35s;
       color: black;
       &:hover {
         background-color: white;
-      }
-      .icon {
-        margin-right: 0.25em;
-        font-size: 1.5em;
       }
     }
   }

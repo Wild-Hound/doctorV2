@@ -2,6 +2,11 @@ import React from "react";
 import SideBar from "../../Components/UserSideBar/SideBar";
 import styles from "./UserDashborad.module.scss";
 import { useParams } from "react-router-dom";
+import AccountInfo from "./AccountInfo/AccountInfo";
+import SetAppointment from "./Appointment/SetAppointment";
+import Doctors from "./Doctors/Doctors";
+import History from "./History/History";
+import Review from "./Review/Review";
 
 function UserDashborad() {
   // @ts-ignore
@@ -9,13 +14,19 @@ function UserDashborad() {
 
   function content() {
     if (id === "accountinfo") {
-      return <h1>Hello World</h1>;
+      return <AccountInfo />;
+    }
+    if (id === "setappointment") {
+      return <SetAppointment />;
     }
     if (id === "apphistory") {
-      return <h1>Hello App History</h1>;
+      return <History />;
+    }
+    if (id === "doctors") {
+      return <Doctors />;
     }
     if (id === "review") {
-      return <h1>Hello Review</h1>;
+      return <Review />;
     }
   }
   return (
