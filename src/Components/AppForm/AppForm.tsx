@@ -12,7 +12,11 @@ import {
   KeyboardDatePicker,
 } from "@material-ui/pickers";
 
-function AppForm() {
+interface Props {
+  bookBtn: Function;
+}
+
+export const AppForm: React.FC<Props> = (Props) => {
   const [age, setAge] = useState("");
   const [selectedDate, setSelectedDate] = useState(
     new Date("2021-08-18T21:11:54")
@@ -28,7 +32,7 @@ function AppForm() {
   };
 
   return (
-    <form className={styles.appForm}>
+    <div className={styles.appForm}>
       <h2>Book an appointment</h2>
       <TextField id="Name" label="Full Name" className={styles.textInputs} />
       <div className={styles.inputWrapper}>
@@ -76,9 +80,15 @@ function AppForm() {
           />
         </MuiPickersUtilsProvider>
       </div>
-      <button className={styles.bookBtn}>Book Now</button>
-    </form>
+      <button
+        className={styles.bookBtn}
+        // @ts-ignore
+        onClick={Props.bookBtn}
+      >
+        Book Now
+      </button>
+    </div>
   );
-}
+};
 
 export default AppForm;

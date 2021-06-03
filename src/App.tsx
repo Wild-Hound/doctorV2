@@ -6,10 +6,23 @@ import HomePage from "./Pages/HomePage/HomePage";
 import Footer from "./Components/Footer/Footer";
 import ContactUs from "./Pages/ContactUsPage/ContactUs";
 import LogIn from "./Pages/LoginPage/Login";
-import Appointment from "./Pages/AppointmentPage/Appointment";
 import UserDashborad from "./Pages/UserDashborad/UserDashborad";
+import fakeData from "./fakeData.json";
+import { store } from "./Redux/Store";
+import * as actions from "./Redux/ActionTypes";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    store.dispatch({
+      type: actions.addDoctors,
+      payload: {
+        doctors: fakeData,
+      },
+    });
+    console.log(store.getState());
+  });
+
   return (
     <div className="App">
       <Router>
@@ -23,9 +36,6 @@ function App() {
           </Route>
           <Route exact path="/login">
             <LogIn />
-          </Route>
-          <Route exact path="/appointment">
-            <Appointment />
           </Route>
           <Route path="/dashborad/:id">
             <UserDashborad />

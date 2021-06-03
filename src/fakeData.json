@@ -1,0 +1,38 @@
+[
+  {
+    "name": "Jessica McFarlane",
+    "speciality": "M.B.B.S, Dentist",
+    "rating": "5",
+    "cost": "75",
+    "availability": "2:00PM - 6:00PM",
+    "time": ["2:00PM-4:00PM", "4:00PM-6:00PM"],
+    "img": "https://picsum.photos/seed/picsum/200/300"
+  },
+  {
+    "name": "Jessica McFarlane",
+    "speciality": "M.B.B.S, Dentist",
+    "rating": "5",
+    "cost": "75",
+    "availability": "2:00PM - 6:00PM",
+    "time": ["2:00PM-4:00PM", "4:00PM-6:00PM"],
+    "img": "https://picsum.photos/seed/picsum/200/300"
+  },
+  {
+    "name": "Jessica McFarlane",
+    "speciality": "M.B.B.S, Dentist",
+    "rating": "5",
+    "cost": "75",
+    "availability": "2:00PM - 6:00PM",
+    "time": ["2:00PM-4:00PM", "4:00PM-6:00PM"],
+    "img": "https://picsum.photos/seed/picsum/200/300"
+  },
+  {
+    "name": "Jessica McFarlane",
+    "speciality": "M.B.B.S, Dentist",
+    "rating": "5",
+    "cost": "75",
+    "availability": "2:00PM - 6:00PM",
+    "time": ["2:00PM-4:00PM", "4:00PM-6:00PM"],
+    "img": "https://picsum.photos/seed/picsum/200/300"
+  }
+]
